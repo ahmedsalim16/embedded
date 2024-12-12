@@ -1,0 +1,48 @@
+<div class="head">
+  <h1>Student Login Schedule</h1>
+</div>
+
+
+<div class="row mt-5" >
+    <table class="table">
+      <thead class="table-secondary">
+        <tr>
+          <!-- <th scope="col">#</th> -->
+          <th scope="col">ID</th>
+          <th scope="col">First name</th>
+          <th scope="col">Last name</th>
+          <th scope="col">Full name</th>
+          <th scope="col">Date Of Birth</th>
+          <th scope="col">Gender</th>
+          <th scope="col">Email</th>
+          <th scope="col">Phone</th>
+          <th scope="col">grade</th>
+          <th scope="col">RfidTag_Id</th>
+        </tr>
+      </thead>
+      <tbody> 
+        
+               <tr *ngFor="let index of student">
+                  
+                  <!-- <td>{{i+1}}</td> -->
+                  <td>{{index.id}}</td>
+                  <td>{{index.firstName}}</td>
+                  <td>{{index.lastName}}</td>
+                  <td>{{index.firstName}} {{index.lastName}}</td> 
+                  <td>{{index.dateOfBirth|date}}</td>
+                  <td>{{index.gender}}</td>
+                  <td>{{index.email}}</td>
+                  <td>{{index.phone}}</td>
+                  <td>{{index.grade}}</td>
+                  <td>{{index.rfidTag_Id}}</td>
+                  
+                 
+                
+                </tr>
+  
+         
+        
+       
+      </tbody>
+    </table>
+       
