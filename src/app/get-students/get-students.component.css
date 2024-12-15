@@ -18,3 +18,13 @@ body{
     margin-right: 10px;
     width: 80%;
 }
+
+button{
+    background-color: red;
+    border: none;
+    border-radius: 10px;
+    width: 75px;
+    height: 30px;
+    color: #fff;
+    margin-left: 95%;
+}

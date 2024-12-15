@@ -11,6 +11,7 @@ export class GetStudentsComponent implements OnInit {
 constructor(private shared:SharedserviceService, private ngZone: NgZone){
 }
   student:any;
+  students: any[] = []; 
 ngOnInit(): void {
   this.getStudents();
 }
@@ -24,12 +25,15 @@ getStudents(){
       console.log(res)
       if (res && Array.isArray(res)) {
         this.student = res; // البيانات جاهزة كمصفوفة
+        alert("Student logged in successfully")
       } else if (res ) {
         this.student = [res]; // تحويل الكائن إلى مصفوفة
+        alert("Student logged in successfully")
       } else {
         this.student = []; // إذا لم توجد بيانات
+        alert("student not found");
       }
-      alert("Student logged in successfully")
+      
       
       
      
@@ -44,6 +48,21 @@ getStudents(){
       
     }
   )
+}
+
+
+delete(){
+  this.shared.deleteStudent() .subscribe(
+    res=>{
+      console.log(res);
+     this.ngOnInit()
+      alert("sucessfully Cleared");
+      },
+      err=>{
+        console.log(err);
+        }
+  )
+
 }
 
   
